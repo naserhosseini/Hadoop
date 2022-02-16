@@ -29,14 +29,11 @@ for line in sys.stdin:
     line = line.split("\t")
     vin = line[0]
     incident_type = line[1]
-    if current_vin == vin:
-        if incident_type == 'I':
-            make = line[2]
-            year = line[3]
 
     # [detect key changes]
     if current_vin != vin:
         if current_vin != None:
+            # write result to STDOUT
             flush()
         reset()
 
